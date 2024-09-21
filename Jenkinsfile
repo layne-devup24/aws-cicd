@@ -1,26 +1,19 @@
 pipeline {
- agent any
- environment {
-   BRANCH_NAME = 'main'
-   GIT_URL = 'https://github.com/layne-devup24/aws-cicd.git' 
-   IMAGE_TAG = 'layne-devup24/aws-cicd.git'
-   IMAGE_VERSION = ${BUILD_NUMBER}
-    }
+ agent any 
+
   stages {
    stage('git checkout'){
     steps{
-      git branch: "${BRANCH_NAME}", url: "${GIT_URL}"  
+          
     }
    }
-   stage('docker build'){
+   stage('test'){
     steps{
-        sh 'docker build -t "${IMAGE_TAG}:${IMAGE_VERSION}" .'
-        sh 'docker images'
+        sh 'echo test'
     }
    }
   }
 }
-
 
 
 
