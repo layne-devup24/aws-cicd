@@ -5,7 +5,7 @@ pipeline {
     BRANCH_NAME = 'main'
     GIT_URL = 'https://github.com/layne-devup24/aws-cicd.git'
     IMAGE_TAG = "kmlayne1225/awscicd"
-    IMAGE_VERSION = "${BUILD_NUMBER}"
+    IMAGE_VERSION = ${BUILD_NUMBER}
  }
 
 
