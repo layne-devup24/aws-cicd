@@ -4,8 +4,6 @@ pipeline {
  environment{
     BRANCH_NAME = 'main'
     GIT_URL = 'https://github.com/layne-devup24/aws-cicd.git'
-    IMAGE_TAG = "kmlayne1225/awscicd"
-    IMAGE_VERSION = "${BUILD_NUMBER}"
  }
 
 
@@ -17,7 +15,7 @@ pipeline {
    }
    stage('docker build'){
     steps{
-        sh 'docker build -t "${IMAGE_TAG}:${IMAGE_VERSION}" .'
+        sh 'docker build -t awscicd .'
         sh 'docker images'
     }
    }
